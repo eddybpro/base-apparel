@@ -95,6 +95,7 @@ main {
 }
 
 .TxtContainer-Form {
+  max-width: 40rem;
   border: 0.5px solid var(--color-brand-1);
   border-radius: 2.5rem;
   padding-left: 1.5rem;
@@ -167,28 +168,44 @@ main {
   );
 }
 
+.TxtContainer-Btn:hover {
+  filter: brightness(120%);
+  box-shadow: 5px 5px 15px 0 var(--color-site-1);
+}
+
 .TxtContainer-Btn > img {
   width: 1.25rem;
 }
 
 @media screen and (min-width: 768px) {
   main {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: dense;
     align-items: flex-start;
     justify-content: center;
-    padding: 2rem;
+    gap: 4rem;
+    padding: 0;
   }
 
   .ImgContainer {
     grid-column: 2;
     height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
   }
 
   .TxtContainer {
+    height: 100%;
+    width: 100%;
+    padding-top: 3rem;
     grid-column: 1;
     text-align: left;
+    background: url("./assets/bg-pattern-desktop.svg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .TxtContainer-Head {
@@ -202,5 +219,13 @@ main {
     margin: 2.5rem 0;
     font-size: 5.2rem;
     line-height: 6rem;
+  }
+
+  .TxtContainer-Para {
+    width: 40rem;
+  }
+
+  .TxtContainer-Form {
+    margin-top: 5rem;
   }
 }
