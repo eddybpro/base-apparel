@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --color-brand-1: hsl(0, 6%, 24%);
+  --color-brand-2: hsl(0, 93%, 68%);
+
+  --color-site-1: hsl(0, 36%, 70%);
+
+  --color-site-l-1: hsl(0, 0%, 100%);
+  --color-site-l-2: hsl(0, 100%, 98%);
+
+  --color-site-l-b-1: hsl(0, 80%, 86%);
+  --color-site-l-b-2: hsl(0, 74%, 74%);
+
+  --font-josefin: "Josefin Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-josefin);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-site-l-1),
+    var(--color-site-l-2)
+  );
+}
+
+main {
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+}
+
+.ImgContainer {
+  width: 100%;
+  height: 30rem;
+}
+
+.ImgContainer > picture > img {
+  width: 100%;
+  height: 100%;
+}
+
+.TxtContainer {
+  text-align: center;
+  padding: 2rem;
+}
+
+.TxtContainer-Head {
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+}
+
+.TxtContainer-Head-Logo {
+  width: 12rem;
+}
+
+.TxtContainer-Title {
+  width: 25rem;
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  line-height: 4.5rem;
+  margin: 2rem auto;
+  color: var(--color-brand-1);
+}
+
+.TxtContainer-Title > span {
+  color: var(--color-site-1);
+  font-weight: 300;
+  display: block;
+}
+
+.TxtContainer-Para {
+  font-size: 1.6rem;
+  color: var(--color-site-1);
+  line-height: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.TxtContainer-Form {
+  border: 0.5px solid var(--color-brand-1);
+  border-radius: 2.5rem;
+  padding-left: 1.5rem;
+  text-align: left;
+  position: relative;
+}
+
+.TxtContainer-Form.FormError {
+  border-color: var(--color-brand-2);
+  color: var(--color-brand-2);
+  position: relative;
+}
+
+.TxtContainer-Form.FormError::after {
+  position: absolute;
+  content: "Please provide a valid email";
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  color: var(--color-brand-2);
+}
+
+.TxtContainer-Form > label {
+  position: relative;
+}
+
+.TxtContainer-Form > label.error::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 8rem;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url("./assets/icon-error.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.TxtContainer-Form > label > input {
+  display: block;
+  font-size: 1.6rem;
+  border: none;
+  padding: 1.5rem 0;
+  outline: none;
+  text-transform: capitalize;
+  background-color: transparent;
+}
+
+.TxtContainer-Form > label > input:active {
+  background-color: transparent;
+}
+
+.TxtContainer-Btn {
+  position: absolute;
+  top: -1.55px;
+  right: -1.5px;
+  bottom: -1px;
+  display: block;
+  cursor: pointer;
+  width: 7rem;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  border: none;
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    var(--color-site-l-b-1),
+    var(--color-site-l-b-2)
+  );
+}
+
+.TxtContainer-Btn > img {
+  width: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: dense;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .ImgContainer {
+    grid-column: 2;
+    height: 100%;
+  }
+
+  .TxtContainer {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .TxtContainer-Head {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 10rem;
+  }
+
+  .TxtContainer-Title {
+    margin: 2.5rem 0;
+    font-size: 5.2rem;
+    line-height: 6rem;
+  }
+}
